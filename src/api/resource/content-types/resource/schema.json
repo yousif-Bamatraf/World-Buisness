@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resources",
+  "info": {
+    "singularName": "resource",
+    "pluralName": "resources",
+    "displayName": "Resource"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Resource_Title": {
+      "type": "string",
+      "required": true
+    },
+    "Resource_About": {
+      "type": "richtext",
+      "required": true
+    },
+    "Resource_Download_Link": {
+      "type": "string",
+      "required": true
+    },
+    "Resource_Type": {
+      "type": "string",
+      "required": true
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "resources"
+    },
+    "Resource_Sectors": {
+      "type": "enumeration",
+      "enum": [
+        "Finance",
+        "Technical"
+      ]
+    },
+    "Resource_Date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

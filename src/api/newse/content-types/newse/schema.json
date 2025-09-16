@@ -27,14 +27,9 @@
       "type": "richtext",
       "required": true
     },
-    "News_Image": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
+    "News_img_Link": {
+      "type": "string",
+      "required": true
     },
     "News_Date": {
       "type": "date",

@@ -429,8 +429,7 @@ export interface ApiNewseNewse extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     News_Content: Schema.Attribute.RichText & Schema.Attribute.Required;
     News_Date: Schema.Attribute.Date & Schema.Attribute.Required;
-    News_Image: Schema.Attribute.Media<'images' | 'videos', true> &
-      Schema.Attribute.Required;
+    News_img_Link: Schema.Attribute.String & Schema.Attribute.Required;
     News_Sectors: Schema.Attribute.Enumeration<['Finance', 'Technical']> &
       Schema.Attribute.Required;
     News_Title: Schema.Attribute.String & Schema.Attribute.Required;

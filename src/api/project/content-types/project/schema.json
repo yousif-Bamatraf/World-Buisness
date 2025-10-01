@@ -90,17 +90,24 @@
         "Active"
       ]
     },
-    "resources": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::resource.resource",
-      "mappedBy": "project"
-    },
     "sectors": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::sector.sector",
       "mappedBy": "project"
+    },
+    "ProjectImage": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

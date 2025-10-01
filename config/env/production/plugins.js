@@ -1,4 +1,4 @@
-// ./config/plugins.js
+// ./config/env/production/plugins.js
 module.exports = ({ env }) => ({
   upload: {
     config: {
@@ -7,7 +7,9 @@ module.exports = ({ env }) => ({
         accessKeyId: env("CF_ACCESS_KEY_ID"),
         secretAccessKey: env("CF_ACCESS_SECRET"),
         endpoint: env("CF_ENDPOINT"),
-        params: { Bucket: env("CF_BUCKET") },
+        params: {
+          Bucket: env("CF_BUCKET"),
+        },
         cloudflarePublicAccessUrl: env("CF_PUBLIC_ACCESS_URL"),
         pool: false,
       },

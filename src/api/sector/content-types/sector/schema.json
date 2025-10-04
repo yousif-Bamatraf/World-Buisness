@@ -24,9 +24,9 @@
       },
       "required": true
     },
-    "project": {
+    "projects": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::project.project",
       "inversedBy": "sectors"
     },
@@ -39,6 +39,12 @@
       },
       "targetField": "Sector_name",
       "required": true
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::resource.resource",
+      "mappedBy": "sectors"
     }
   }
 }

@@ -114,9 +114,9 @@
     },
     "sectors": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::sector.sector",
-      "mappedBy": "project"
+      "mappedBy": "projects"
     }
   }
 }

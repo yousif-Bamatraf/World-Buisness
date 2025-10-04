@@ -60,19 +60,6 @@
       },
       "required": true
     },
-    "Resource_Sectors": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "enum": [
-        "Finance",
-        "Technical"
-      ]
-    },
     "Resource_Date": {
       "type": "date",
       "pluginOptions": {
@@ -81,6 +68,12 @@
         }
       },
       "required": true
+    },
+    "sectors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sector.sector",
+      "inversedBy": "resources"
     }
   }
 }

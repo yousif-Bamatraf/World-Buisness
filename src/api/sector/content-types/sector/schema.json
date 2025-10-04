@@ -29,6 +29,16 @@
       "relation": "manyToOne",
       "target": "api::project.project",
       "inversedBy": "sectors"
+    },
+    "Sector_Idetifires": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "Sector_name",
+      "required": true
     }
   }
 }

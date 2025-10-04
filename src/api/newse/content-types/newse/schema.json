@@ -24,21 +24,8 @@
       },
       "required": true
     },
-    "News_Sectors": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "enum": [
-        "Finance",
-        "Technical"
-      ]
-    },
-    "News_Content": {
-      "type": "richtext",
+    "News_SubTitle": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -46,8 +33,20 @@
       },
       "required": true
     },
-    "News_img_Link": {
-      "type": "string",
+    "News_tags": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": false,
+      "enum": [
+        "tag1"
+      ]
+    },
+    "News_Content": {
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -64,14 +63,29 @@
       },
       "required": true
     },
-    "News_Writer": {
-      "type": "string",
+    "News_images": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "News_is_Fav": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

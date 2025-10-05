@@ -87,7 +87,7 @@
       },
       "required": false
     },
-    "Project_Status": {
+    "Project_Statu": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {

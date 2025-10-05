@@ -24,7 +24,7 @@
       },
       "required": true
     },
-    "Peoject_Lead": {
+    "Project_Lead": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -96,7 +96,9 @@
       },
       "required": true,
       "enum": [
-        "Active"
+        "Active",
+        "Planning",
+        "Completed"
       ]
     },
     "Project_Image": {

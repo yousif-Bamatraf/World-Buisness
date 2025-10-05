@@ -14,7 +14,6 @@ module.exports = ({ env }) => [
             "data:",
             "blob:",
             "market-assets.strapi.io",
-            // أضف نطاق R2 العام بدون https://
             env("CF_PUBLIC_ACCESS_URL")
               ? env("CF_PUBLIC_ACCESS_URL").replace(/^https?:\/\//, "")
               : "",

@@ -96,7 +96,7 @@
       },
       "required": true,
       "enum": [
-        "Activ",
+        "Active",
         "Planning",
         "Completed"
       ]

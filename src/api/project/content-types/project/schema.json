@@ -96,9 +96,9 @@
       },
       "required": true,
       "enum": [
-        "ACTIVE ",
-        "PLANNING",
-        "COMPLETED"
+        "Active",
+        "Planning",
+        "Completed"
       ]
     },
     "Project_Image": {

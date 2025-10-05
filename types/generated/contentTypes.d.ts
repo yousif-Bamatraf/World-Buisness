@@ -465,28 +465,36 @@ export interface ApiNewseNewse extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    News_img_Link: Schema.Attribute.String &
+    News_images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    News_Sectors: Schema.Attribute.Enumeration<['Finance', 'Technical']> &
+    News_is_Fav: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    News_SubTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    News_tags: Schema.Attribute.Enumeration<['tag1']> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     News_Title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    News_Writer: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -530,6 +538,13 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::project.project'
     >;
+    Peoject_Lead: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Project_Cost: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -549,6 +564,13 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    Project_Image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     Project_Location: Schema.Attribute.String &
@@ -579,15 +601,8 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    ProjectImage: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
-    sectors: Schema.Attribute.Relation<'oneToMany', 'api::sector.sector'>;
+    sectors: Schema.Attribute.Relation<'manyToMany', 'api::sector.sector'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -640,12 +655,6 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    Resource_Sectors: Schema.Attribute.Enumeration<['Finance', 'Technical']> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     Resource_Title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -660,6 +669,13 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    Resources_Tags: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sectors: Schema.Attribute.Relation<'manyToMany', 'api::sector.sector'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -687,8 +703,19 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::sector.sector'>;
-    project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
+    projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
+    resources: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::resource.resource'
+    >;
+    Sector_Idetifires: Schema.Attribute.UID<'Sector_name'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Sector_name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

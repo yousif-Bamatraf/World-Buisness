@@ -33,15 +33,6 @@
       },
       "required": false
     },
-    "Resource_Download_Link": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
     "Resource_Type": {
       "type": "string",
       "pluginOptions": {
@@ -74,6 +65,19 @@
       "relation": "manyToMany",
       "target": "api::sector.sector",
       "inversedBy": "resources"
+    },
+    "Resources_file": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

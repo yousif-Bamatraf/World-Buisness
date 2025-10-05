@@ -24,11 +24,27 @@
       },
       "required": true
     },
-    "project": {
+    "projects": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::project.project",
       "inversedBy": "sectors"
+    },
+    "Sector_Idetifires": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "Sector_name",
+      "required": true
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::resource.resource",
+      "mappedBy": "sectors"
     }
   }
 }

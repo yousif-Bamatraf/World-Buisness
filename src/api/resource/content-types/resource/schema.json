@@ -24,14 +24,14 @@
       },
       "required": true
     },
-    "Resource_About": {
-      "type": "richtext",
+    "Resources_Tags": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true
+      "required": false
     },
     "Resource_Download_Link": {
       "type": "string",
@@ -51,17 +51,14 @@
       },
       "required": true
     },
-    "Resource_Sectors": {
-      "type": "enumeration",
+    "Resource_About": {
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "enum": [
-        "Finance",
-        "Technical"
-      ]
+      "required": true
     },
     "Resource_Date": {
       "type": "date",
@@ -71,6 +68,12 @@
         }
       },
       "required": true
+    },
+    "sectors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sector.sector",
+      "inversedBy": "resources"
     }
   }
 }

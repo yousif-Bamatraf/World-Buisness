@@ -488,10 +488,22 @@ export interface ApiNewseNewse extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    News_tags: Schema.Attribute.Enumeration<['tag1']> &
+    News_tags: Schema.Attribute.Enumeration<
+      [
+        'Project Management',
+        'Investment',
+        'Feasibility Studies',
+        'Institutional Development',
+        'Entrepreneurship',
+        'Startups',
+        'Education and Training',
+        'Digital Transformation',
+        'Studies and Consulting',
+      ]
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     News_Title: Schema.Attribute.String &
@@ -538,13 +550,6 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::project.project'
     >;
-    Peoject_Lead: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     Project_Cost: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -573,6 +578,13 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    Project_Lead: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Project_Location: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -594,7 +606,9 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    Project_Status: Schema.Attribute.Enumeration<['Active']> &
+    Project_Status: Schema.Attribute.Enumeration<
+      ['Active', 'Planning', 'Completed']
+    > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -648,13 +662,6 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    Resource_Download_Link: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     Resource_Title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -662,7 +669,16 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    Resource_Type: Schema.Attribute.String &
+    Resource_Type: Schema.Attribute.Enumeration<
+      ['.pdf', '.word', '.excel', '.powerpoint']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Resources_file: Schema.Attribute.Media<'files'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -709,7 +725,7 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::resource.resource'
     >;
-    Sector_Idetifires: Schema.Attribute.UID<'Sector_name'> &
+    Sector_Identifires: Schema.Attribute.UID<'Sector_name'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

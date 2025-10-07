@@ -33,15 +33,6 @@
       },
       "required": false
     },
-    "Resource_Type": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
     "Resource_About": {
       "type": "richtext",
       "pluginOptions": {
@@ -77,6 +68,21 @@
       "required": true,
       "allowedTypes": [
         "files"
+      ]
+    },
+    "Resource_Type": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "enum": [
+        ".pdf",
+        ".word",
+        ".excel",
+        ".powerpoint"
       ]
     }
   }

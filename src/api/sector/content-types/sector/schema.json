@@ -30,7 +30,7 @@
       "target": "api::project.project",
       "inversedBy": "sectors"
     },
-    "Sector_Idetifires": {
+    "Sector_Identifires": {
       "type": "uid",
       "pluginOptions": {
         "i18n": {

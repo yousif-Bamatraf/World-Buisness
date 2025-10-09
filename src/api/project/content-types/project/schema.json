@@ -67,7 +67,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "Project_Cost": {
       "type": "decimal",

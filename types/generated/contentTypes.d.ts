@@ -551,7 +551,6 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         };
       }>;
     Project_End_Date: Schema.Attribute.Date &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

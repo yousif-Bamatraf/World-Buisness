@@ -10,13 +10,13 @@
       "required": true,
       "enum": [
         "Education",
-        "Digital Transformation ",
+        "Digital Transformation",
         "Energy",
-        "Banking and Financial Services ",
-        "Commercial ",
-        "Industrial ",
-        "Investment ",
-        "Contracting and Public Services "
+        "Banking and Financial Services",
+        "Commercial",
+        "Industrial",
+        "Investment",
+        "Contracting and Public Services"
       ]
     }
   },

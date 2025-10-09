@@ -485,19 +485,8 @@ export interface ApiNewseNewse extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    News_tags: Schema.Attribute.Enumeration<
-      [
-        'Project Management',
-        'Investment',
-        'Feasibility Studies',
-        'Institutional Development',
-        'Entrepreneurship',
-        'Startups',
-        'Education and Training',
-        'Digital Transformation',
-        'Studies and Consulting',
-      ]
-    > &
+    News_tags: Schema.Attribute.Component<'shared.tags-list', true> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -613,7 +602,13 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    sectors: Schema.Attribute.Relation<'manyToMany', 'api::sector.sector'>;
+    Sectors: Schema.Attribute.Component<'shared.sectors', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -688,7 +683,13 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    sectors: Schema.Attribute.Relation<'manyToMany', 'api::sector.sector'>;
+    Sectors: Schema.Attribute.Component<'shared.sectors', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -716,12 +717,7 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::sector.sector'>;
-    projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
-    resources: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::resource.resource'
-    >;
     Sector_Identifires: Schema.Attribute.UID<'Sector_name'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

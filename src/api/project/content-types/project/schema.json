@@ -114,11 +114,16 @@
         "images"
       ]
     },
-    "sectors": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::sector.sector",
-      "mappedBy": "projects"
+    "Sectors": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "shared.sectors",
+      "repeatable": true,
+      "required": true
     }
   }
 }

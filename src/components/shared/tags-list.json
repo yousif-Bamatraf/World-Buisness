@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_tags_lists",
+  "info": {
+    "displayName": "tags-list"
+  },
+  "options": {},
+  "attributes": {
+    "New_Tag": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Project Management",
+        "Investment",
+        "Feasibility Studies",
+        "Institutional Development",
+        "Entrepreneurship",
+        "Startups",
+        "Education and Training",
+        "Digital Transformation",
+        "Studies and Consulting"
+      ]
+    }
+  },
+  "config": {}
+}

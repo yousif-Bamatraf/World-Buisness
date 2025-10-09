@@ -51,12 +51,6 @@
       },
       "required": true
     },
-    "sectors": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::sector.sector",
-      "inversedBy": "resources"
-    },
     "Resources_file": {
       "type": "media",
       "pluginOptions": {
@@ -84,6 +78,17 @@
         ".excel",
         ".powerpoint"
       ]
+    },
+    "Sectors": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "shared.sectors",
+      "repeatable": true,
+      "required": true
     }
   }
 }

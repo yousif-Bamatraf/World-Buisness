@@ -24,12 +24,6 @@
       },
       "required": true
     },
-    "projects": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::project.project",
-      "inversedBy": "sectors"
-    },
     "Sector_Identifires": {
       "type": "uid",
       "pluginOptions": {
@@ -39,12 +33,6 @@
       },
       "targetField": "Sector_name",
       "required": true
-    },
-    "resources": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::resource.resource",
-      "mappedBy": "sectors"
     }
   }
 }

@@ -33,26 +33,6 @@
       },
       "required": true
     },
-    "News_tags": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false,
-      "enum": [
-        "Project Management",
-        "Investment",
-        "Feasibility Studies",
-        "Institutional Development",
-        "Entrepreneurship",
-        "Startups",
-        "Education and Training",
-        "Digital Transformation",
-        "Studies and Consulting"
-      ]
-    },
     "News_Content": {
       "type": "richtext",
       "pluginOptions": {
@@ -80,10 +60,7 @@
       },
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
+      "allowedTypes": ["images", "files"]
     },
     "New_Avatar": {
       "type": "media",
@@ -94,10 +71,18 @@
       },
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
+      "allowedTypes": ["images", "files"]
+    },
+    "News_tags": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "shared.tags-list",
+      "repeatable": true,
+      "required": true
     }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_sectors",
+  "info": {
+    "displayName": "Sectors"
+  },
+  "options": {},
+  "attributes": {
+    "Sector": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Education",
+        "Digital Transformation ",
+        "Energy",
+        "Banking and Financial Services ",
+        "Commercial ",
+        "Industrial ",
+        "Investment ",
+        "Contracting and Public Services "
+      ]
+    }
+  },
+  "config": {}
+}

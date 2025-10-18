@@ -676,12 +676,6 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    Resources_Tags: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     Sectors: Schema.Attribute.Component<'shared.sectors', true> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

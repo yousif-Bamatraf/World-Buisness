@@ -24,15 +24,6 @@
       },
       "required": true
     },
-    "Resources_Tags": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false
-    },
     "Resource_About": {
       "type": "richtext",
       "pluginOptions": {

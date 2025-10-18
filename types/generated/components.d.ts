@@ -9,13 +9,13 @@ export interface SharedSectors extends Struct.ComponentSchema {
     Sector: Schema.Attribute.Enumeration<
       [
         'Education',
-        'Digital Transformation ',
+        'Digital Transformation',
         'Energy',
-        'Banking and Financial Services ',
-        'Commercial ',
-        'Industrial ',
-        'Investment ',
-        'Contracting and Public Services ',
+        'Banking and Financial Services',
+        'Commercial',
+        'Industrial',
+        'Investment',
+        'Contracting and Public Services',
       ]
     > &
       Schema.Attribute.Required;

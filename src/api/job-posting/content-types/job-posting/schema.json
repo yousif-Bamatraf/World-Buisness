@@ -78,6 +78,15 @@
       },
       "required": true,
       "default": false
+    },
+    "URL_Form": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
     }
   }
 }

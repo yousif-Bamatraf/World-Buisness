@@ -33,24 +33,6 @@
       },
       "required": true
     },
-    "Responsibilities": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "Requirements": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
     "Location": {
       "type": "string",
       "pluginOptions": {
